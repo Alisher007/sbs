@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container" >
+    <form action="" method="GET" class="mb-2">
+        <div class="row justify-content-start" >
+            <div class="pr-1">
+                {% if date %}
+                    <input type="date" id="datePicker" name="date" value="{{date}}" class="form-control" />
+                {% else %}
+                    <input type="date" id="datePicker" name="date" class="" />
+                {% endif %}
+            </div>
+            <div class="">
+                <button type="submit" class="btn btn-primary">submit</button>
+            </div>
+        </div>
+    </form>
+       <div class="row" >
+        <table class="table table-striped table-dark table-bordered">
+            <thead>
+              <tr>
+                    <th scope="col">Time</th>
+                {% if table %}
+                    {%for table1 in table %}
+                    <th scope="col">room - {{table1}}</th>
+                    {% endfor%}
+                {% endif %}
+              </tr>
+            </thead>
+            <tbody>
+                {% if avail %}
+                    {%for aaa in avail %}
+                    <tr>
+                        {%for bbb in aaa %}
+                            {%  if forloop.counter0|divisibleby:2 %}
+                                <td scope="row">{{bbb.time}}</td>
+                                <td class="{{bbb.occupied}}">
+                                    <form action="{% url 'reservation:update' %}" method='GET'>
+                                        <input hidden name="table" value='{{bbb.table}}' />
+                                        <input hidden name="table_id" value='{{bbb.table_id}}' />
+                                        <input hidden name="time" value='{{bbb.time}}' />
+                                        <input hidden name="time_id" value='{{bbb.time_id}}' />
+                                        <input hidden name="date" value='{{date}}' />
+                                        <input hidden name="customer" value='{{bbb.customer}}' />
+                                        <input hidden name="res_id" value='{{bbb.res_id}}' />
+                                        <input hidden name="next" value="{{ request.path }}">
+                                        <input type='submit' value='{{bbb.status}} {{bbb.customer}} - {{bbb.res_id}}' />
+                                        
+                                    </form>
+                                </td>
+                            {% else %}
+                                <td class="{{bbb.occupied}}">
+                                    <form action="{% url 'reservation:update' %}" method='GET'>
+                                        <input hidden name="table" value='{{bbb.table}}' />
+                                        <input hidden name="table_id" value='{{bbb.table_id}}' />
+                                        <input hidden name="time" value='{{bbb.time}}' />
+                                        <input hidden name="time_id" value='{{bbb.time_id}}' />
+                                        <input hidden name="date" value='{{date}}' />
+                                        <input hidden name="customer" value='{{bbb.customer}}' />
+                                        <input hidden name="res_id" value='{{bbb.res_id}}' />
+                                        <input hidden name="next" value="{{ request.path }}">
+                                        <input type='submit' value='{{bbb.status}} {{bbb.customer}} - {{bbb.res_id}}' />
+                                    </form>
+                                </td>
+                            {% endif %}
+                        {% endfor%}
+                    </tr>
+                    {% endfor%}
+                {% endif %}
+            </tbody>
+          </table>
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+{% endblock %}

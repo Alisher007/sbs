@@ -1,0 +1,162 @@
+[{
+    "model": "reservations.timestart",
+    "pk": 1,
+    "fields": {
+        "name": "09:00"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 2,
+    "fields": {
+        "name": "09:15"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 3,
+    "fields": {
+        "name": "09:30"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 4,
+    "fields": {
+        "name": "09:45"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 5,
+    "fields": {
+        "name": "10:00"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 6,
+    "fields": {
+        "name": "10:15"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 7,
+    "fields": {
+        "name": "10:30"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 8,
+    "fields": {
+        "name": "10:45"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 9,
+    "fields": {
+        "name": "11:00"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 10,
+    "fields": {
+        "name": "11:15"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 11,
+    "fields": {
+        "name": "11:30"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 12,
+    "fields": {
+        "name": "11:45"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 13,
+    "fields": {
+        "name": "12:00"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 14,
+    "fields": {
+        "name": "12:15"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 15,
+    "fields": {
+        "name": "12:30"
+    }
+}, {
+    "model": "reservations.timestart",
+    "pk": 16,
+    "fields": {
+        "name": "12:45"
+    }
+}, 
+{
+    "model": "reservations.timestart",
+    "pk": 17,
+    "fields": {
+        "name": "13:00"
+    }
+},
+{
+    "model": "customers.customer",
+    "pk": 1,
+    "fields": {
+        "email": "a@a.com"
+    }
+},
+{
+    "model": "customers.customer",
+    "pk": 2,
+    "fields": {
+        "email": "b@b.com"
+    }
+},
+{
+    "model": "customers.customer",
+    "pk": 3,
+    "fields": {
+        "email": "c@c.com"
+    }
+},
+{
+    "model": "customers.customer",
+    "pk": 4,
+    "fields": {
+        "email": "d@d.com"
+    }
+},
+{
+    "model": "reservations.table",
+    "pk": 1,
+    "fields": {
+        "name": "a"
+    }
+},
+{
+    "model": "reservations.table",
+    "pk": 2,
+    "fields": {
+        "name": "b"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "name": "full body"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "name": "head and shoulder"
+    }
+}
+
+]

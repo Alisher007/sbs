@@ -1,0 +1,35 @@
+{% load static %}
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0px; background-color: #5AC8FA;">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="container-fluid">
+      <div class="navbar-header">
+        <div class="row">
+          <a class="navbar-brand" href="/" style="color: #ffffff">
+            Home
+          </a>
+          <a class="navbar-brand" href="{% url 'admin:index' %}" style="color: #ffffff">
+            admin
+          </a>
+          <a class="navbar-brand" href="{% url 'reservation:list' %}" style="color: #ffffff">
+            Reservations
+          </a>
+          <a class="navbar-brand" href="{% url 'customers:list' %}" style="color: #ffffff">
+            Customers
+          </a>
+          <a class="navbar-brand" href="{% url 'products:list' %}" style="color: #ffffff">
+            Products
+          </a>
+          <h3>SPA Booking System</h3>
+        </div>
+    </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div>
+</nav>

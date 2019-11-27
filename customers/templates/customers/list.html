@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                    <form action="{% url 'customers:add' %}" method="POST" class="mb-2">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col">
+                                    <input type="email" name="email" class="form-control">
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Add</button>
+                                </div>
+                            </div>
+                        </form>
+            </div>
+            <div class="col-12">
+                    
+                        <div class="row" >
+                            <div class="col-5">
+                                <table class="table table-striped table-dark table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Customers</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                            {% if customers %}
+                                                {%for customer1 in customers %}
+                                                <tr>
+                                                    <td >{{customer1.id}}</td>
+                                                    <td >{{customer1}}</td>
+                                                    <td >
+                                                        <form action="{% url 'customers:delete' customer1.id %}"
+                                                        style="display: inline;"
+                                                        method="POST">
+                                                            {% csrf_token %}
+                                                            <button type="submit">delete</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                {% endfor%}
+                                            {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><!-- /.row -->
+            </div>
+        </div>
+    </div> <!-- /.container -->
+{% endblock %}

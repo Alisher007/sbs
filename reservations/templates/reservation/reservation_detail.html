@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form action="." method='POST'>
+                    {% csrf_token %}
+                    {{ form.as_p }}                    
+                    <input type='submit' value='Save' />
+                    <input hidden name="res_id" value="{{ res_id }}">
+                </form>
+                <form action="{% url 'reservation:delete' %}" method='POST'>{% csrf_token %}   
+                    <input type='submit' value='Delete' />
+                    <input type="hidden" name="next" value="{{ request.path }}">
+                    <input type="hidden" name="res_id" value="{{ res_id }}">
+                </form>    
+            </div>
+        </div>
+    </div>
+{% endblock %}

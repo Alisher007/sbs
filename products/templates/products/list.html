@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                    <form action="{% url 'products:add' %}" method="POST" class="mb-2">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" name="name" class="form-control">
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Add</button>
+                                </div>
+                            </div>
+                        </form>
+            </div>
+            <div class="col-12">
+                    
+                        <div class="row" >
+                            <div class="col-5">
+                                <table class="table table-striped table-dark table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Products</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                            {% if products %}
+                                                {%for product1 in products %}
+                                                <tr>
+                                                    <td >{{product1.id}}</td>
+                                                    <td >{{product1}}</td>
+                                                    <td >
+                                                        <form action="{% url 'products:delete' product1.id %}"
+                                                        style="display: inline;"
+                                                        method="POST">
+                                                            {% csrf_token %}
+                                                            <button type="submit">delete</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                {% endfor%}
+                                            {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><!-- /.row -->
+            </div>
+        </div>
+    </div> <!-- /.container -->
+{% endblock %}

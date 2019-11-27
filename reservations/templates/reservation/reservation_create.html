@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form action="{% url 'reservation:create' %}" method='POST'>{% csrf_token %}
+                    {{ form.as_p }}                    
+                    <input type='submit' value='Save' />
+                    <input hidden name="res_id" value="{{ res_id }}">
+                </form>                
+            </div>
+        </div>
+    </div>
+{% endblock %}
